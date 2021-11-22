@@ -35,12 +35,10 @@ const count = (str, char) => {
 
 // 6. 대소문자 변환
 const toggleCase = str => {
-  const arr = [...str];
-  return arr
-    .map(char =>
-      char.match(/[a-z]/) ? char.toUpperCase() : char.toLowerCase(),
-    )
-    .join('');
+  return str.replace(
+    /([a-z]+)|([A-Z]+)/g,
+    (_, p1, p2) => (p1 && p1.toUpperCase()) || (p2 && p2.toLowerCase()),
+  );
 };
 
 // 7. 문자열 압축
