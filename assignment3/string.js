@@ -37,13 +37,15 @@ const count = (str, char) => {
 const toggleCase = str => {
   return str.replace(
     /([a-z]+)|([A-Z]+)/g,
-    (_, p1, p2) => (p1 && p1.toUpperCase()) || (p2 && p2.toLowerCase()),
+    (_, lowercase, uppercase) =>
+      (lowercase && lowercase.toUpperCase()) ||
+      (uppercase && uppercase.toLowerCase()),
   );
 };
 
 // 7. 문자열 압축
 const compress = str => {
-  return str.replace(/(([\w])\2+)/g, (_, p1) => p1[0] + p1.length);
+  return str.replace(/(([\w])\2+)/g, (_, part) => part[0] + part.length);
 };
 
 module.exports = {
