@@ -62,7 +62,7 @@ test('get difference btw two dates', () => {
   );
 });
 test('get difference btw two dates', () => {
-  expect(isEqualDate(new Date('2021/07/24'), new Date('2022/07/2'))).toBe(
-    false,
-  );
+  expect(
+    isEqualDate(new Date('2021-11-23-12:00'), new Date('2021-11-24-11:59')),
+  ).toBe(false);
 });

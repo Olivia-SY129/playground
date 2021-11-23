@@ -45,7 +45,7 @@ const toggleCase = str => {
 
 // 7. 문자열 압축
 const compress = str => {
-  return str.replace(/(([\w])\2+)/g, (_, part) => part[0] + part.length);
+  return str.replace(/(.)\1+/g, match => match[0] + match.length);
 };
 
 module.exports = {
