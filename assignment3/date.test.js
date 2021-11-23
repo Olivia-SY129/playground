@@ -12,12 +12,12 @@ const date = new Date();
 
 // 1. Date 객체를 ‘yyyy-mm-dd’ 형식의 문자열로 변환하기
 test('change formate of date', () => {
-  expect(formatDate(date)).toBe('2021-11-22');
+  expect(formatDate(date)).toBe('2021-11-23');
 });
 
 // 2. 요일 구하기
 test('get day', () => {
-  expect(getDay(date)).toBe('월요일');
+  expect(getDay(date)).toBe('화요일');
 });
 
 // 3. 특정 달의 말일 구하기

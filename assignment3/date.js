@@ -12,7 +12,7 @@
 const formatDate = (() => {
   const format = n => (n < 10 ? `0${n}` : `${n}`);
   return date =>
-    `${date.getFullYear()}-${format(date.getMonth())}-${format(
+    `${date.getFullYear()}-${format(date.getMonth() + 1)}-${format(
       date.getDate(),
     )}`;
 })();

@@ -35,11 +35,8 @@ const count = (str, char) => {
 
 // 6. 대소문자 변환
 const toggleCase = str => {
-  return str.replace(
-    /([a-z]+)|([A-Z]+)/g,
-    (_, lowercase, uppercase) =>
-      (lowercase && lowercase.toUpperCase()) ||
-      (uppercase && uppercase.toLowerCase()),
+  return str.replace(/([a-z]+)|([A-Z]+)/g, (_, lowercase, uppercase) =>
+    lowercase ? lowercase.toUpperCase() : uppercase.toLowerCase(),
   );
 };
 
