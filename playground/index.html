@@ -7,11 +7,36 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="test"></div>
+    <ul id="fruits">
+      <li id="apple">Apple</li>
+      <li id="banana">Banana</li>
+      <li id="orange">Orange</li>
+    </ul>
     <script>
-      const $test = document.getElementById('test');
-      const $child = document.createElement('div');
-      test.appendChild($child);
+      const $fruits = document.getElementById('fruits');
+      const $banana = document.getElementById('banana');
+
+      $fruits.addEventListener(
+        'click',
+        e => {
+          console.log(`event phase: ${e.eventPhase}`);
+          console.log(`event target: ${e.target}`);
+          console.log(`currentTarget: ${e.currentTarget}`);
+        },
+        true,
+      );
+
+      $banana.addEventListener('click', e => {
+        console.log(`event phase: ${e.eventPhase}`);
+        console.log(`event target: ${e.target}`);
+        console.log(`currentTarget: ${e.currentTarget}`);
+      });
+
+      $fruits.addEventListener('click', e => {
+        console.log(`event phase: ${e.eventPhase}`);
+        console.log(`event target: ${e.target}`);
+        console.log(`currentTarget: ${e.currentTarget}`);
+      });
     </script>
   </body>
 </html>
